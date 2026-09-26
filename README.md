@@ -1,6 +1,9 @@
 # 🩺 HealthVision AI
 ### *Intelligent Healthcare. Simplified for Everyone.*
 
+🌐 **Live Production URL:** [https://healthvision-ai-eight.vercel.app](https://healthvision-ai-eight.vercel.app)
+
+[![Live Demo](https://img.shields.io/badge/Live%20Website-Vercel%20Production-success.svg?style=flat&logo=vercel)](https://healthvision-ai-eight.vercel.app)
 [![Status](https://img.shields.io/badge/Status-Active%20Development-0ea5e9.svg)](https://github.com/sinhatumpa84-rgb/HealthVision.AI)
 [![Framework](https://img.shields.io/badge/Framework-React%2019%20%7C%20TanStack%20Start-61dafb.svg)](https://tanstack.com/start)
 [![Styling](https://img.shields.io/badge/Styling-Tailwind%20CSS%20v4-38bdf8.svg)](https://tailwindcss.com/)
