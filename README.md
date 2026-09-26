@@ -1,6 +1,7 @@
 # 🩺 HealthVision AI
 ### *Intelligent Healthcare. Simplified for Everyone.*
 
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-moojyatra.vercel.app-00dfa2.svg?style=for-the-badge&logo=vercel&logoColor=white)](https://moojyatra.vercel.app/)
 [![Status](https://img.shields.io/badge/Status-Active%20Development-0ea5e9.svg)](https://github.com/sinhatumpa84-rgb/HealthVision.AI)
 [![Framework](https://img.shields.io/badge/Framework-React%2019%20%7C%20TanStack%20Start-61dafb.svg)](https://tanstack.com/start)
 [![Styling](https://img.shields.io/badge/Styling-Tailwind%20CSS%20v4-38bdf8.svg)](https://tailwindcss.com/)
@@ -9,28 +10,36 @@
 [![Database](https://img.shields.io/badge/Database-Supabase%20PostgreSQL-10b981.svg)](https://supabase.com/)
 [![License](https://img.shields.io/badge/License-Educational%20Use-gray.svg)](#-license)
 
+> [!TIP]
+> ### 🌐 Live Application Deployment
+> **Experience HealthVision AI directly in your browser:**  
+> 🔗 **[https://moojyatra.vercel.app/](https://moojyatra.vercel.app/)**
+>
+> *Instant access to the interactive AI symptom checker, multimodal medical scan analysis, vitals tracking, WebRTC live doctor teleconsultations, and emergency services—no local setup required.*
+
 ---
 
 ## 📖 Table of Contents
-1. [Project Overview](#-project-overview)
-2. [The Problem](#-the-problem)
-3. [The Solution](#-the-solution)
-4. [Core Features](#-core-features)
-5. [How It Works & Architecture](#-how-it-works--architecture)
-6. [Technology Stack](#-technology-stack)
-7. [Artificial Intelligence & Multimodal Vision](#-artificial-intelligence--multimodal-vision)
-8. [UI & UX Highlights](#-ui--ux-highlights)
-9. [Real-World Applications](#-real-world-applications)
-10. [Future Scope](#-future-scope)
-11. [Medical Disclaimer](#-medical-disclaimer)
-12. [Project Structure](#-project-structure)
-13. [Setup & Installation](#-setup--installation)
-14. [Environment Variables](#-environment-variables)
-15. [Project Status](#-project-status)
-16. [Contributing](#-contributing)
-17. [About the Developer](#-about-the-developer)
-18. [Development Philosophy](#-my-development-philosophy)
-19. [Connect With Me](#-connect-with-me)
+1. [Live Deployment](#-live-application-deployment)
+2. [Project Overview](#-project-overview)
+3. [The Problem](#-the-problem)
+4. [The Solution](#-the-solution)
+5. [Core Features](#-core-features)
+6. [How It Works & Architecture](#-how-it-works--architecture)
+7. [Technology Stack](#-technology-stack)
+8. [Artificial Intelligence & Multimodal Vision](#-artificial-intelligence--multimodal-vision)
+9. [UI & UX Highlights](#-ui--ux-highlights)
+10. [Real-World Applications](#-real-world-applications)
+11. [Future Scope](#-future-scope)
+12. [Medical Disclaimer](#-medical-disclaimer)
+13. [Project Structure](#-project-structure)
+14. [Setup & Installation](#-setup--installation)
+15. [Environment Variables](#-environment-variables)
+16. [Project Status](#-project-status)
+17. [Contributing](#-contributing)
+18. [About the Developer](#-about-the-developer)
+19. [Development Philosophy](#-my-development-philosophy)
+20. [Connect With Me](#-connect-with-me)
 
 ---
 
@@ -43,7 +52,7 @@ Rather than forcing users to navigate dense clinical jargon or fragmented health
 Built with **React 19**, **TanStack Start (SSR)**, **Tailwind CSS v4**, **Supabase**, **Firebase Authentication**, and the **Google Gemini AI model family**, HealthVision AI bridges cutting-edge artificial intelligence with human-centric healthcare workflows.
 
 > [!NOTE]
-> **30-Second Summary:** HealthVision AI transforms symptom inputs, diagnostic imaging scans, and physiological vitals into clear, structured, clinical-grade insights—complete with instant PDF exports, WebRTC live doctor video consults, and emergency facility discovery.
+> **30-Second Summary:** HealthVision AI transforms symptom inputs, diagnostic imaging scans, and physiological vitals into clear, structured, clinical-grade insights—complete with instant PDF exports, WebRTC live doctor video consults, and emergency facility discovery. Try it live at **[moojyatra.vercel.app](https://moojyatra.vercel.app/)**.
 
 ---
 
@@ -469,6 +478,10 @@ HealthVision.AI/
 ---
 
 ## 🚀 Setup & Installation
+
+> [!TIP]
+> **Prefer to test without local setup?**  
+> Access the live deployed application instantly at **[https://moojyatra.vercel.app/](https://moojyatra.vercel.app/)**.
 
 Follow these steps to run HealthVision AI locally on your system:
 
