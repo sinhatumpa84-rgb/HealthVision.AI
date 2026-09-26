@@ -14,6 +14,7 @@ import {
   Video,
   LineChart as LineChartIcon,
 } from "lucide-react";
+import { useAuth } from "@/contexts/auth";
 
 export const Route = createFileRoute("/_authenticated/dashboard")({
   head: () => ({
@@ -42,11 +43,16 @@ const quickActions = [
 ] as const;
 
 function Dashboard() {
+  const { user } = useAuth();
+  const greetingName = user?.displayName || user?.email?.split("@")[0] || "";
+
   return (
     <div className="container mx-auto px-4 sm:px-6 py-10">
       <div className="flex items-end justify-between flex-wrap gap-3">
         <div>
-          <h1 className="text-3xl sm:text-4xl font-bold text-foreground">Welcome back</h1>
+          <h1 className="text-3xl sm:text-4xl font-bold text-foreground">
+            Welcome back{greetingName ? `, ${greetingName}` : ""}
+          </h1>
           <p className="mt-1 text-muted-foreground">Here's a snapshot of your health today.</p>
         </div>
       </div>

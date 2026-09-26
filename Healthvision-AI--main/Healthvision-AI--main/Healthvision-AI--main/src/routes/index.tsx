@@ -90,7 +90,7 @@ function Landing() {
           wellness guidance into one beautiful, accessible app.
         </p>
         <div className="mt-10 flex flex-wrap justify-center gap-3">
-          <Link to="/auth">
+          <Link to="/signup">
             <Button size="lg" className="bg-gradient-brand text-primary-foreground hover:opacity-90 shadow-glow">
               Get started free
               <ArrowRight className="ml-2 h-4 w-4" />
@@ -199,7 +199,7 @@ function Landing() {
           <p className="mt-3 text-muted-foreground max-w-xl mx-auto">
             Sign up free and start getting personalized health insights in under a minute.
           </p>
-          <Link to="/auth" className="inline-block mt-6">
+          <Link to="/signup" className="inline-block mt-6">
             <Button size="lg" className="bg-gradient-brand text-primary-foreground hover:opacity-90">
               Create your account
               <ArrowRight className="ml-2 h-4 w-4" />

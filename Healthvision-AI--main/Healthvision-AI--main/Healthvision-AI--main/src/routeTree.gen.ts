@@ -9,6 +9,8 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SignupRouteImport } from './routes/signup'
+import { Route as SigninRouteImport } from './routes/signin'
 import { Route as ResetPasswordRouteImport } from './routes/reset-password'
 import { Route as AuthRouteImport } from './routes/auth'
 import { Route as AuthenticatedRouteImport } from './routes/_authenticated'
@@ -26,6 +28,16 @@ import { Route as AuthenticatedConsultRouteImport } from './routes/_authenticate
 import { Route as AuthenticatedChatbotRouteImport } from './routes/_authenticated/chatbot'
 import { Route as AuthenticatedAppointmentsRouteImport } from './routes/_authenticated/appointments'
 
+const SignupRoute = SignupRouteImport.update({
+  id: '/signup',
+  path: '/signup',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SigninRoute = SigninRouteImport.update({
+  id: '/signin',
+  path: '/signin',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ResetPasswordRoute = ResetPasswordRouteImport.update({
   id: '/reset-password',
   path: '/reset-password',
@@ -113,6 +125,8 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/auth': typeof AuthRoute
   '/reset-password': typeof ResetPasswordRoute
+  '/signin': typeof SigninRoute
+  '/signup': typeof SignupRoute
   '/appointments': typeof AuthenticatedAppointmentsRoute
   '/chatbot': typeof AuthenticatedChatbotRoute
   '/consult': typeof AuthenticatedConsultRoute
@@ -130,6 +144,8 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/auth': typeof AuthRoute
   '/reset-password': typeof ResetPasswordRoute
+  '/signin': typeof SigninRoute
+  '/signup': typeof SignupRoute
   '/appointments': typeof AuthenticatedAppointmentsRoute
   '/chatbot': typeof AuthenticatedChatbotRoute
   '/consult': typeof AuthenticatedConsultRoute
@@ -149,6 +165,8 @@ export interface FileRoutesById {
   '/_authenticated': typeof AuthenticatedRouteWithChildren
   '/auth': typeof AuthRoute
   '/reset-password': typeof ResetPasswordRoute
+  '/signin': typeof SigninRoute
+  '/signup': typeof SignupRoute
   '/_authenticated/appointments': typeof AuthenticatedAppointmentsRoute
   '/_authenticated/chatbot': typeof AuthenticatedChatbotRoute
   '/_authenticated/consult': typeof AuthenticatedConsultRoute
@@ -168,6 +186,8 @@ export interface FileRouteTypes {
     | '/'
     | '/auth'
     | '/reset-password'
+    | '/signin'
+    | '/signup'
     | '/appointments'
     | '/chatbot'
     | '/consult'
@@ -185,6 +205,8 @@ export interface FileRouteTypes {
     | '/'
     | '/auth'
     | '/reset-password'
+    | '/signin'
+    | '/signup'
     | '/appointments'
     | '/chatbot'
     | '/consult'
@@ -203,6 +225,8 @@ export interface FileRouteTypes {
     | '/_authenticated'
     | '/auth'
     | '/reset-password'
+    | '/signin'
+    | '/signup'
     | '/_authenticated/appointments'
     | '/_authenticated/chatbot'
     | '/_authenticated/consult'
@@ -222,11 +246,27 @@ export interface RootRouteChildren {
   AuthenticatedRoute: typeof AuthenticatedRouteWithChildren
   AuthRoute: typeof AuthRoute
   ResetPasswordRoute: typeof ResetPasswordRoute
+  SigninRoute: typeof SigninRoute
+  SignupRoute: typeof SignupRoute
   ApiChatStreamRoute: typeof ApiChatStreamRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/signup': {
+      id: '/signup'
+      path: '/signup'
+      fullPath: '/signup'
+      preLoaderRoute: typeof SignupRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/signin': {
+      id: '/signin'
+      path: '/signin'
+      fullPath: '/signin'
+      preLoaderRoute: typeof SigninRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/reset-password': {
       id: '/reset-password'
       path: '/reset-password'
@@ -379,6 +419,8 @@ const rootRouteChildren: RootRouteChildren = {
   AuthenticatedRoute: AuthenticatedRouteWithChildren,
   AuthRoute: AuthRoute,
   ResetPasswordRoute: ResetPasswordRoute,
+  SigninRoute: SigninRoute,
+  SignupRoute: SignupRoute,
   ApiChatStreamRoute: ApiChatStreamRoute,
 }
 export const routeTree = rootRouteImport

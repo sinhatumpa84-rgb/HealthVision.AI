@@ -12,6 +12,9 @@ import { Toaster } from "@/components/ui/sonner";
 import { supabase } from "@/integrations/supabase/client";
 import { I18nProvider } from "@/contexts/i18n";
 import { ThemeProvider } from "@/contexts/theme";
+import { AuthProvider } from "@/contexts/auth";
+import { auth } from "@/firebase/config";
+import { onAuthStateChanged } from "firebase/auth";
 
 import appCss from "../styles.css?url";
 
@@ -123,11 +126,22 @@ function AuthSync() {
   const router = useRouter();
   const queryClient = useQueryClient();
   useEffect(() => {
-    const { data } = supabase.auth.onAuthStateChange(() => {
+    // Sync Firebase auth state
+    const unsubscribeFb = onAuthStateChanged(auth, () => {
       router.invalidate();
       queryClient.invalidateQueries();
     });
-    return () => data.subscription.unsubscribe();
+
+    // Sync legacy Supabase auth state if present
+    const { data: sbData } = supabase.auth.onAuthStateChange(() => {
+      router.invalidate();
+      queryClient.invalidateQueries();
+    });
+
+    return () => {
+      unsubscribeFb();
+      sbData.subscription.unsubscribe();
+    };
   }, [router, queryClient]);
   return null;
 }
@@ -138,9 +152,11 @@ function RootComponent() {
     <QueryClientProvider client={queryClient}>
       <ThemeProvider>
         <I18nProvider>
-          <AuthSync />
-          <Outlet />
-          <Toaster richColors position="top-right" />
+          <AuthProvider>
+            <AuthSync />
+            <Outlet />
+            <Toaster richColors position="top-right" />
+          </AuthProvider>
         </I18nProvider>
       </ThemeProvider>
     </QueryClientProvider>
